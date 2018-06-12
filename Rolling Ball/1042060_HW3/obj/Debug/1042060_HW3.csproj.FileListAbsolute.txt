@@ -1,0 +1,9 @@
+C:\Users\asus\Desktop\電腦圖學\1042060_HW3\1042060_HW3\bin\Debug\1042060_HW3.exe.config
+C:\Users\asus\Desktop\電腦圖學\1042060_HW3\1042060_HW3\bin\Debug\1042060_HW3.exe
+C:\Users\asus\Desktop\電腦圖學\1042060_HW3\1042060_HW3\bin\Debug\1042060_HW3.pdb
+C:\Users\asus\Desktop\電腦圖學\1042060_HW3\1042060_HW3\obj\Debug\1042060_HW3.csprojResolveAssemblyReference.cache
+C:\Users\asus\Desktop\電腦圖學\1042060_HW3\1042060_HW3\obj\Debug\_1042060_HW3.Form1.resources
+C:\Users\asus\Desktop\電腦圖學\1042060_HW3\1042060_HW3\obj\Debug\_1042060_HW3.Properties.Resources.resources
+C:\Users\asus\Desktop\電腦圖學\1042060_HW3\1042060_HW3\obj\Debug\1042060_HW3.csproj.GenerateResource.Cache
+C:\Users\asus\Desktop\電腦圖學\1042060_HW3\1042060_HW3\obj\Debug\1042060_HW3.exe
+C:\Users\asus\Desktop\電腦圖學\1042060_HW3\1042060_HW3\obj\Debug\1042060_HW3.pdb
