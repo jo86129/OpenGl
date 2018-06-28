@@ -7,3 +7,12 @@ C:\Users\asus\Desktop\電腦圖學\1042060_finalProject\1042060_finalProject\obj
 C:\Users\asus\Desktop\電腦圖學\1042060_finalProject\1042060_finalProject\obj\Debug\1042060_finalProject.csproj.GenerateResource.Cache
 C:\Users\asus\Desktop\電腦圖學\1042060_finalProject\1042060_finalProject\obj\Debug\1042060_finalProject.exe
 C:\Users\asus\Desktop\電腦圖學\1042060_finalProject\1042060_finalProject\obj\Debug\1042060_finalProject.pdb
+C:\Users\asus\Documents\GitHub\OpenGl\Rubik's cube 2x2x2\1042060_finalProject\bin\Debug\1042060_finalProject.exe.config
+C:\Users\asus\Documents\GitHub\OpenGl\Rubik's cube 2x2x2\1042060_finalProject\obj\Debug\1042060_finalProject.exe
+C:\Users\asus\Documents\GitHub\OpenGl\Rubik's cube 2x2x2\1042060_finalProject\obj\Debug\1042060_finalProject.pdb
+C:\Users\asus\Documents\GitHub\OpenGl\Rubik's cube 2x2x2\1042060_finalProject\bin\Debug\1042060_finalProject.exe
+C:\Users\asus\Documents\GitHub\OpenGl\Rubik's cube 2x2x2\1042060_finalProject\bin\Debug\1042060_finalProject.pdb
+C:\Users\asus\Documents\GitHub\OpenGl\Rubik's cube 2x2x2\1042060_finalProject\obj\Debug\1042060_finalProject.csprojResolveAssemblyReference.cache
+C:\Users\asus\Documents\GitHub\OpenGl\Rubik's cube 2x2x2\1042060_finalProject\obj\Debug\_1042060_finalProject.Form1.resources
+C:\Users\asus\Documents\GitHub\OpenGl\Rubik's cube 2x2x2\1042060_finalProject\obj\Debug\_1042060_finalProject.Properties.Resources.resources
+C:\Users\asus\Documents\GitHub\OpenGl\Rubik's cube 2x2x2\1042060_finalProject\obj\Debug\1042060_finalProject.csproj.GenerateResource.Cache

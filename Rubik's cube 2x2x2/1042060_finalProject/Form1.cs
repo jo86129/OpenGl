@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tao.OpenGl;
 using Tao.FreeGlut;
+using System.Collections;
 
 namespace _1042060_finalProject
 {
@@ -16,13 +17,21 @@ namespace _1042060_finalProject
     {
         const double DEGREE_TO_RAD = 0.01745329; // 3.1415926/180
         double Radius = 15.0, Longitude = 30.0, Latitude = 30.0; //經度 / 緯度
-        int[] num=new int[8]; //第幾個方塊
+        int[] num=new int[8]; //第幾個方塊  num[0]表示是cube1
         int[] xRot = new int[8];//表示x軸轉多少
         int[] yRot = new int[8];//表示y軸轉多少
         int[] zRot = new int[8];//表示z軸轉多少
        // int index = 0;//表示要第幾個
         int count = 0; //連續轉
         int[] spin = new int[5]; //哪些是要轉的   (x=1 y=2 z=3) 位置 位置 位置 位置
+        Stack stack1 = new Stack();
+        Stack stack2 = new Stack();
+        Stack stack3 = new Stack();
+        Stack stack4 = new Stack();
+        Stack stack5 = new Stack();
+        Stack stack6 = new Stack();
+        Stack stack7 = new Stack();
+        Stack stack8 = new Stack();
         public Form1()
         {
             InitializeComponent();
@@ -79,65 +88,44 @@ namespace _1042060_finalProject
 
             
             Gl.glPushMatrix();
-            Gl.glRotated(xRot[0], 1.0, 0.0, 0.0);
-            Gl.glRotated(yRot[0], 0.0, 1.0, 0.0);
-            Gl.glRotated(zRot[0], 0.0, 0.0, 1.0);
+            rotate(stack1);
             cube1();
             Gl.glPopMatrix();
 
             Gl.glPushMatrix();
-            Gl.glRotated(xRot[1], 1.0, 0.0, 0.0);
-            Gl.glRotated(yRot[1], 0.0, 1.0, 0.0);
-            Gl.glRotated(zRot[1], 0.0, 0.0, 1.0);
+            rotate(stack2);
             cube2();
             Gl.glPopMatrix();
 
             Gl.glPushMatrix();
-            Gl.glRotated(xRot[2], 1.0, 0.0, 0.0);
-            Gl.glRotated(yRot[2], 0.0, 1.0, 0.0);
-            Gl.glRotated(zRot[2], 0.0, 0.0, 1.0);
+            rotate(stack3);
             cube3();
             Gl.glPopMatrix();
 
             Gl.glPushMatrix();
-            Gl.glRotated(xRot[3], 1.0, 0.0, 0.0);
-            Gl.glRotated(yRot[3], 0.0, 1.0, 0.0);
-            Gl.glRotated(zRot[3], 0.0, 0.0, 1.0);
+            rotate(stack4);
             cube4();
             Gl.glPopMatrix();
 
             Gl.glPushMatrix();
-            Gl.glRotated(xRot[4], 1.0, 0.0, 0.0);
-            Gl.glRotated(yRot[4], 0.0, 1.0, 0.0);
-            Gl.glRotated(zRot[4], 0.0, 0.0, 1.0);
+            rotate(stack5);
             cube5();
             Gl.glPopMatrix();
 
             Gl.glPushMatrix();
-            Gl.glRotated(xRot[5], 1.0, 0.0, 0.0);
-            Gl.glRotated(yRot[5], 0.0, 1.0, 0.0);
-            Gl.glRotated(zRot[5], 0.0, 0.0, 1.0);
+            rotate(stack6);
             cube6();
             Gl.glPopMatrix();
 
             Gl.glPushMatrix();
-            Gl.glRotated(xRot[6], 1.0, 0.0, 0.0);
-            Gl.glRotated(yRot[6], 0.0, 1.0, 0.0);
-            Gl.glRotated(zRot[6], 0.0, 0.0, 1.0);
+            rotate(stack7);
             cube7();
             Gl.glPopMatrix();
 
             Gl.glPushMatrix();
-            Gl.glRotated(xRot[7], 1.0, 0.0, 0.0);
-            Gl.glRotated(yRot[7], 0.0, 1.0, 0.0);
-            Gl.glRotated(zRot[7], 0.0, 0.0, 1.0);
+            rotate(stack8);
             cube8();
             Gl.glPopMatrix();
-
-
-            label1.Text = spin.Length.ToString();
-            label2.Text = zRot[1].ToString();
-            label3.Text = num[0].ToString() + " " + num[1].ToString() + " " + num[2].ToString() + " " + num[3].ToString() + " " + num[4].ToString() + " " + num[5].ToString() + " " + num[6].ToString() + " " + num[7].ToString();
 
         }
         private void cube()
@@ -163,30 +151,7 @@ namespace _1042060_finalProject
         }
         private void cube1()
         {
-          /*  Gl.glBegin(Gl.GL_QUADS);
-            //上面 右上
-            Gl.glNormal3d(0.0, 1.0, 0.0);
-            Gl.glVertex3d(0.0,2.0,0.0);
-            Gl.glVertex3d(2.0,2.0, 0.0);
-            Gl.glVertex3d(2.0, 2.0, -2.0);
-            Gl.glVertex3d(0.0, 2.0, -2.0);
-
-            //右邊
-            Gl.glNormal3d(1.0, 0.0, 0.0);
-            Gl.glVertex3d(2.0, 0.0, 0.0);
-            Gl.glVertex3d(2.0, 0.0, -2.0);
-            Gl.glVertex3d(2.0, 2.0, -2.0);
-            Gl.glVertex3d(2.0, 2.0, 0.0);
-           
-            //back
-            Gl.glNormal3d(0.0, 0.0, -1.0);
-            Gl.glVertex3d(0.0, 0.0, -2.0);
-            Gl.glVertex3d(2.0, 0.0, -2.0);
-            Gl.glVertex3d(2.0, 2.0, -2.0);
-            Gl.glVertex3d(0.0, 2.0, -2.0);
-
-            Gl.glEnd();*/
-
+          
             //上面 右上
             Gl.glColor3ub(255,249,130);//yellow
             Gl.glPushMatrix();
@@ -213,31 +178,7 @@ namespace _1042060_finalProject
         }
         private void cube2()
         {
-          /*  Gl.glBegin(Gl.GL_QUADS);
-
-            //上面 右下
-            Gl.glNormal3d(0.0, 1.0, 0.0);
-            Gl.glVertex3d(0.0, 2.0, 2.0);
-            Gl.glVertex3d(2.0, 2.0, 2.0);
-            Gl.glVertex3d(2.0, 2.0, 0.0);
-            Gl.glVertex3d(0.0, 2.0, 0.0);
-
-            //右邊
-            Gl.glNormal3d(1.0, 0.0, 0.0);
-            Gl.glVertex3d(2.0, 0.0, 2.0);
-            Gl.glVertex3d(2.0, 0.0, 0.0);
-            Gl.glVertex3d(2.0, 2.0, 0.0);
-            Gl.glVertex3d(2.0, 2.0, 2.0);
-
-            //前面
-            Gl.glNormal3d(0.0, 0.0, 1.0);
-            Gl.glVertex3d(0.0, 0.0, 2.0);
-            Gl.glVertex3d(2.0, 0.0, 2.0);
-            Gl.glVertex3d(2.0, 2.0, 2.0);
-            Gl.glVertex3d(0.0, 2.0, 2.0);
-
-            Gl.glEnd();*/
-
+  
             //上面 右下       
             Gl.glColor3ub(255, 249, 130);//yellow
             Gl.glPushMatrix();
@@ -264,30 +205,6 @@ namespace _1042060_finalProject
         }
         private void cube3()
         {
-           /* Gl.glBegin(Gl.GL_QUADS);
-
-            //上面 左下
-            Gl.glNormal3d(0.0, 1.0, 0.0);
-            Gl.glVertex3d(-2.0, 2.0, 2.0);
-            Gl.glVertex3d(0.0, 2.0, 2.0);
-            Gl.glVertex3d(0.0, 2.0, 0.0);
-            Gl.glVertex3d(-2.0, 2.0, 0.0);
-
-            //左邊
-            Gl.glNormal3d(-1.0, 0.0, 0.0);
-            Gl.glVertex3d(-2.0, 0.0, 2.0);
-            Gl.glVertex3d(-2.0, 0.0, 0.0);
-            Gl.glVertex3d(-2.0, 2.0, 0.0);
-            Gl.glVertex3d(-2.0, 2.0, 2.0);
-
-            //前面
-            Gl.glNormal3d(0.0, 0.0, 1.0);
-            Gl.glVertex3d(-2.0, 0.0, 2.0);
-            Gl.glVertex3d(0.0, 0.0, 2.0);
-            Gl.glVertex3d(0.0, 2.0, 2.0);
-            Gl.glVertex3d(-2.0, 2.0, 2.0);
-
-            Gl.glEnd();*/
 
             //上面 左下       
             Gl.glColor3ub(255, 249, 130);//yellow
@@ -315,31 +232,7 @@ namespace _1042060_finalProject
         }
         private void cube4()
         {
-          /*  Gl.glBegin(Gl.GL_QUADS);
-
-            //上面 左上
-            Gl.glNormal3d(0.0, 1.0, 0.0);
-            Gl.glVertex3d(-2.0, 2.0, 0.0);
-            Gl.glVertex3d(0.0, 2.0, 0.0);
-            Gl.glVertex3d(0.0, 2.0, -2.0);
-            Gl.glVertex3d(-2.0, 2.0, -2.0);
-
-            //左邊
-            Gl.glNormal3d(-1.0, 0.0, 0.0);
-            Gl.glVertex3d(-2.0, 0.0, 0.0);
-            Gl.glVertex3d(-2.0, 0.0, -2.0);
-            Gl.glVertex3d(-2.0, 2.0, -2.0);
-            Gl.glVertex3d(-2.0, 2.0, 0.0);
-
-            //後面
-            Gl.glNormal3d(0.0, 0.0, -1.0);
-            Gl.glVertex3d(-2.0, 0.0, -2.0);
-            Gl.glVertex3d(0.0, 0.0, -2.0);
-            Gl.glVertex3d(0.0, 2.0, -2.0);
-            Gl.glVertex3d(-2.0, 2.0, -2.0);
-
-            Gl.glEnd();*/
-
+         
             //上面 左上
             Gl.glColor3ub(255, 249, 130);//yellow
             Gl.glPushMatrix();
@@ -463,6 +356,79 @@ namespace _1042060_finalProject
             cubeAnti();
             Gl.glPopMatrix();
         }
+        private void rotate(Stack a)
+        {
+            
+           // Stack stack2 = new Stack(a.ToArray());
+            //String[] angle = new string[a.Count];
+            Object[] angle = a.ToArray();
+            a.CopyTo(angle,0);
+
+          
+            for (int i = 1; i <= a.Count; i += 2) //第一個數字表示角度 第二個表示軸向
+                {
+                    if(angle[i].ToString()=="x")
+                    {
+                        Gl.glRotated(int.Parse(angle[i-1].ToString()), 1.0, 0.0, 0.0);
+                    
+
+                    }
+                    else if (angle[i].ToString() == "y")
+                    {
+                        Gl.glRotated(int.Parse(angle[i - 1].ToString()), 0.0, 1.0, 0.0);
+                      
+                       
+                    }
+                    else if (angle[i].ToString() == "z")
+                    {
+                       Gl.glRotated(int.Parse(angle[i - 1].ToString()), 0.0, 0.0, 1.0);
+                                          }
+                }
+        }
+        private void pushStack(int num,string axis,int rot)
+        {
+            if(num==0)
+            {
+                stack1.Push(axis);
+                stack1.Push(rot);
+            }
+            else if(num==1)
+            {
+                stack2.Push(axis);
+                stack2.Push(rot);
+            }
+            else if (num == 2)
+            {
+                stack3.Push(axis);
+                stack3.Push(rot);
+            }
+            else if (num == 3)
+            {
+                stack4.Push(axis);
+                stack4.Push(rot);
+            }
+            else if (num ==4)
+            {
+                stack5.Push(axis);
+                stack5.Push(rot);
+            }
+            else if (num == 5)
+            {
+                stack6.Push(axis);
+                stack6.Push(rot);
+            }
+            else if (num == 6)
+            {
+                stack7.Push(axis);
+                stack7.Push(rot);
+            }
+            else if (num == 7)
+            {
+                stack8.Push(axis);
+                stack8.Push(rot);
+            }
+            this.simpleOpenGlControl1.Refresh();
+        }
         private void simpleOpenGlControl1_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -501,27 +467,32 @@ namespace _1042060_finalProject
             {
                 if(num[i]==1)
                 {
-                    yRot[i]-=9; //負的是順時針
+                    yRot[i]=-9; //負的是順時針
                     num[i] = 2;
                     spin[1] = i;
+                    pushStack(i,"y",yRot[i]);
+                    
                 }
                 else if(num[i]==2)
                 {
-                    yRot[i] -= 9;
+                    yRot[i] = -9;
                     num[i] = 3;
                     spin[2] = i;
+                    pushStack(i, "y", yRot[i]);
                 }
                 else if (num[i] == 3)
                 {
-                    yRot[i] -= 9;
+                    yRot[i] = -9;
                     num[i] = 4;
                     spin[3] = i;
+                    pushStack(i, "y", yRot[i]);
                 }
                 else if(num[i]==4)
                 {
-                    yRot[i] -= 9;
+                    yRot[i] = -9;
                     num[i] = 1;
-                    spin[4] = i;    
+                    spin[4] = i;
+                    pushStack(i, "y", yRot[i]);
                 }             
             }//for end
             count++;
@@ -541,27 +512,33 @@ namespace _1042060_finalProject
                         getNum = spin[i]; //取得那些編號要旋轉
                         if (spin[0] == 1)
                         {
-                            xRot[getNum] -= 9;//順時針
+                            xRot[getNum] = -9;//順時針
+                            pushStack(getNum, "x", xRot[getNum]);
                         }
                         else if (spin[0] == 2)
                         {
-                            yRot[getNum] -= 9;
+                            yRot[getNum] = -9;
+                            pushStack(getNum, "y", yRot[getNum]);
                         }
                         else if (spin[0] == 3)
                         {
-                            zRot[getNum] -= 9;
+                            zRot[getNum] = -9;
+                            pushStack(getNum, "z", zRot[getNum]);
                         }
                         else if (spin[0] == 4)
                         {
-                            xRot[getNum] += 9; //逆時針
+                            xRot[getNum] = 9; //逆時針
+                            pushStack(getNum, "x", xRot[getNum]);
                         }
                         else if (spin[0] == 5)
                         {
-                            yRot[getNum] += 9;
+                            yRot[getNum] = 9;
+                            pushStack(getNum, "y", yRot[getNum]);
                         }
                         else if (spin[0] == 6)
                         {
-                            zRot[getNum] += 9;
+                            zRot[getNum] = 9;
+                            pushStack(getNum, "z", zRot[getNum]);
                         }
                     } //if end 
                 }//for end
@@ -584,27 +561,31 @@ namespace _1042060_finalProject
             {
                 if (num[i] == 1)
                 {
-                    yRot[i] += 9; //逆時針
+                    yRot[i] = 9; //逆時針
                     num[i] = 4;
                     spin[1] = i;
+                    pushStack(i, "y", yRot[i]);
                 }
                 else if (num[i] == 2)
                 {
-                    yRot[i] += 9;
+                    yRot[i] = 9;
                     num[i] = 1;
                     spin[2] = i;
+                    pushStack(i, "y", yRot[i]);
                 }
                 else if (num[i] == 3)
                 {
-                    yRot[i] += 9;
+                    yRot[i] = 9;
                     num[i] = 2;
                     spin[3] = i;
+                    pushStack(i, "y", yRot[i]);
                 }
                 else if (num[i] == 4)
                 {
-                    yRot[i] += 9;
+                    yRot[i] = 9;
                     num[i] = 3;
                     spin[4] = i;
+                    pushStack(i, "y", yRot[i]);
                 }
             }//for end
             count++;
@@ -619,27 +600,31 @@ namespace _1042060_finalProject
             {
                 if (num[i] == 5)
                 {
-                    yRot[i] -= 9; //負的是順時針
+                    yRot[i] = -9; //負的是順時針
                     num[i] = 6;
                     spin[1] = i;
+                    pushStack(i, "y", yRot[i]);
                 }
                 else if (num[i] == 6)
                 {
-                    yRot[i] -= 9;
+                    yRot[i] = -9;
                     num[i] = 7;
                     spin[2] = i;
+                    pushStack(i, "y", yRot[i]);
                 }
                 else if (num[i] == 7)
                 {
-                    yRot[i] -= 9;
+                    yRot[i] = -9;
                     num[i] = 8;
                     spin[3] = i;
+                    pushStack(i, "y", yRot[i]);
                 }
                 else if (num[i] == 8)
                 {
-                    yRot[i] -= 9;
+                    yRot[i] = -9;
                     num[i] = 5;
                     spin[4] = i;
+                    pushStack(i, "y", yRot[i]);
                 }
             }//for end
             count++;
@@ -654,27 +639,31 @@ namespace _1042060_finalProject
             {
                 if (num[i] == 5)
                 {
-                    yRot[i] += 9; //逆時針
+                    yRot[i] = 9; //逆時針
                     num[i] = 8;
                     spin[1] = i;
+                    pushStack(i, "y", yRot[i]);
                 }
                 else if (num[i] == 6)
                 {
-                    yRot[i] += 9;
+                    yRot[i] = 9;
                     num[i] = 5;
                     spin[2] = i;
+                    pushStack(i, "y", yRot[i]);
                 }
                 else if (num[i] == 7)
                 {
-                    yRot[i] += 9;
+                    yRot[i] = 9;
                     num[i] = 6;
                     spin[3] = i;
+                    pushStack(i, "y", yRot[i]);
                 }
                 else if (num[i] == 8)
                 {
-                    yRot[i] += 9;
+                    yRot[i] = 9;
                     num[i] = 7;
                     spin[4] = i;
+                    pushStack(i, "y", yRot[i]);
                 }
             }//for end
             count++;
@@ -689,27 +678,31 @@ namespace _1042060_finalProject
             {
                 if (num[i] == 2)
                 {
-                    zRot[i] -= 9; //負的是順時針
+                    zRot[i] = -9; //負的是順時針
                     num[i] = 6;
                     spin[1] = i;
+                    pushStack(i, "z", zRot[i]);
                 }
                 else if (num[i] == 3)
                 {
-                    zRot[i] -= 9;
+                    zRot[i] = -9;
                     num[i] = 2;
                     spin[2] = i;
+                    pushStack(i, "z", zRot[i]);
                 }
                 else if (num[i] == 6)
                 {
-                    zRot[i] -= 9;
+                    zRot[i] = -9;
                     num[i] = 7;
                     spin[3] = i;
+                    pushStack(i, "z", zRot[i]);
                 }
                 else if (num[i] == 7)
                 {
-                    zRot[i] -= 9;
+                    zRot[i] = -9;
                     num[i] = 3;
                     spin[4] = i;
+                    pushStack(i, "z", zRot[i]);
                 }
             }//for end
             count++;
@@ -724,27 +717,31 @@ namespace _1042060_finalProject
             {
                 if (num[i] == 2)
                 {
-                    zRot[i] += 9; //逆時針
+                    zRot[i] = 9; //逆時針
                     num[i] = 3;
                     spin[1] = i;
+                    pushStack(i, "z", zRot[i]);
                 }
                 else if (num[i] == 3)
                 {
-                    zRot[i] += 9;
+                    zRot[i] = 9;
                     num[i] = 7;
                     spin[2] = i;
+                    pushStack(i, "z", zRot[i]);
                 }
                 else if (num[i] == 6)
                 {
-                    zRot[i] += 9;
+                    zRot[i] = 9;
                     num[i] = 2;
                     spin[3] = i;
+                    pushStack(i, "z", zRot[i]);
                 }
                 else if (num[i] == 7)
                 {
-                    zRot[i] += 9;
+                    zRot[i] = 9;
                     num[i] = 6;
                     spin[4] = i;
+                    pushStack(i, "z", zRot[i]);
                 }
             }//for end
             count++;
@@ -759,27 +756,31 @@ namespace _1042060_finalProject
             {
                 if (num[i] == 1)
                 {
-                    zRot[i] -= 9; //負的順時針  正是逆時針
+                    zRot[i] = -9; //負的順時針  正是逆時針
                     num[i] = 5;
                     spin[1] = i;
+                    pushStack(i, "z", zRot[i]);
                 }
                 else if (num[i] == 4)
                 {
-                    zRot[i] -= 9;
+                    zRot[i] = -9;
                     num[i] = 1;
                     spin[2] = i;
+                    pushStack(i, "z", zRot[i]);
                 }
                 else if (num[i] == 5)
                 {
-                    zRot[i] -= 9;
+                    zRot[i] = -9;
                     num[i] = 8;
                     spin[3] = i;
+                    pushStack(i, "z", zRot[i]);
                 }
                 else if (num[i] == 8)
                 {
-                    zRot[i] -= 9;
+                    zRot[i] = -9;
                     num[i] = 4;
                     spin[4] = i;
+                    pushStack(i, "z", zRot[i]);
                 }
             }//for end
             count++;
@@ -794,27 +795,31 @@ namespace _1042060_finalProject
             {
                 if (num[i] == 1)
                 {
-                    zRot[i] += 9; //正是逆時針
+                    zRot[i] = 9; //正是逆時針
                     num[i] = 4;
                     spin[1] = i;
+                    pushStack(i, "z", zRot[i]);
                 }
                 else if (num[i] == 4)
                 {
-                    zRot[i] += 9;
+                    zRot[i] = 9;
                     num[i] = 8;
                     spin[2] = i;
+                    pushStack(i, "z", zRot[i]);
                 }
                 else if (num[i] == 5)
                 {
-                    zRot[i] += 9;
+                    zRot[i] = 9;
                     num[i] = 1;
                     spin[3] = i;
+                    pushStack(i, "z", zRot[i]);
                 }
                 else if (num[i] == 8)
                 {
-                    zRot[i] += 9;
+                    zRot[i] = 9;
                     num[i] = 5;
                     spin[4] = i;
+                    pushStack(i, "z", zRot[i]);
                 }
             }//for end
             count++;
@@ -824,32 +829,36 @@ namespace _1042060_finalProject
 
         private void leftClock_Click(object sender, EventArgs e)
         {
-            spin[0] = 1; //spin第一個數字是顯示哪個軸向旋轉 1=X順 2=Y順 3=Z順 4=X逆 5=Y逆 6=Z逆
+            spin[0] = 4; //spin第一個數字是顯示哪個軸向旋轉 1=X順 2=Y順 3=Z順 4=X逆 5=Y逆 6=Z逆  這裡的順逆時針剛好跟其他的相反
             for (int i = 0; i < 8; i++)
             {
                 if (num[i] == 3)
                 {
-                    xRot[i] -= 9; //負的順時針  正是逆時針
+                    xRot[i] = 9; //負的順時針  正是逆時針  這裡的順逆時針剛好跟其他的相反 所以這裡是正的順時
                     num[i] = 7;
                     spin[1] = i;
+                    pushStack(i, "x", xRot[i]);
                 }
                 else if (num[i] ==4)
                 {
-                    xRot[i] -= 9;
+                    xRot[i] = 9; 
                     num[i] = 3;
                     spin[2] = i;
+                    pushStack(i, "x", xRot[i]);
                 }
                 else if (num[i] == 7)
                 {
-                    xRot[i] -= 9;
+                    xRot[i] = 9; 
                     num[i] = 8;
                     spin[3] = i;
+                    pushStack(i, "x", xRot[i]);
                 }
                 else if (num[i] == 8)
                 {
-                    xRot[i] -= 9;
+                    xRot[i] = 9; 
                     num[i] = 4;
                     spin[4] = i;
+                    pushStack(i, "x", xRot[i]);
                 }
             }//for end
             count++;
@@ -859,32 +868,36 @@ namespace _1042060_finalProject
 
         private void leftAnti_Click(object sender, EventArgs e)
         {
-            spin[0] = 4; //spin第一個數字是顯示哪個軸向旋轉 1=X順 2=Y順 3=Z順 4=X逆 5=Y逆 6=Z逆
+            spin[0] = 1; //spin第一個數字是顯示哪個軸向旋轉 1=X順 2=Y順 3=Z順 4=X逆 5=Y逆 6=Z逆 這裡的順逆時針剛好跟其他的相反
             for (int i = 0; i < 8; i++)
             {
                 if (num[i] == 3)
                 {
-                    xRot[i] += 9; //負的順時針  正是逆時針
+                    xRot[i] = -9; //負的順時針  正是逆時針   這裡的順逆時針剛好跟其他的相反
                     num[i] = 4;
                     spin[1] = i;
+                    pushStack(i, "x", xRot[i]);
                 }
                 else if (num[i] == 4)
                 {
-                    xRot[i] += 9;
+                    xRot[i] = -9;
                     num[i] = 8;
                     spin[2] = i;
+                    pushStack(i, "x", xRot[i]);
                 }
                 else if (num[i] == 7)
                 {
-                    xRot[i] += 9;
+                    xRot[i] = -9;
                     num[i] = 3;
                     spin[3] = i;
+                    pushStack(i, "x", xRot[i]);
                 }
                 else if (num[i] == 8)
                 {
-                    xRot[i] += 9;
+                    xRot[i] = -9;
                     num[i] = 7;
                     spin[4] = i;
+                    pushStack(i, "x", xRot[i]);
                 }
             }//for end
             count++;
@@ -899,27 +912,31 @@ namespace _1042060_finalProject
             {
                 if (num[i] == 1)
                 {
-                    xRot[i] -= 9; //負的順時針  正是逆時針
+                    xRot[i] = -9; //負的順時針  正是逆時針
                     num[i] = 5;
                     spin[1] = i;
+                    pushStack(i, "x", xRot[i]);
                 }
                 else if (num[i] == 2)
                 {
-                    xRot[i] -= 9;
+                    xRot[i] = -9;
                     num[i] = 1;
                     spin[2] = i;
+                    pushStack(i, "x", xRot[i]);
                 }
                 else if (num[i] == 5)
                 {
-                    xRot[i] -= 9;
+                    xRot[i] = -9;
                     num[i] = 6;
-                    spin[3] = i;
+                    spin[3] = i; 
+                    pushStack(i, "x", xRot[i]);
                 }
                 else if (num[i] == 6)
                 {
-                    xRot[i] -= 9;
+                    xRot[i] = -9;
                     num[i] = 2;
                     spin[4] = i;
+                    pushStack(i, "x", xRot[i]);
                 }
             }//for end
             count++;
@@ -934,27 +951,31 @@ namespace _1042060_finalProject
             {
                 if (num[i] == 1)
                 {
-                    xRot[i] += 9; //負的順時針  正是逆時針
+                    xRot[i] = 9; //負的順時針  正是逆時針
                     num[i] = 2;
                     spin[1] = i;
+                    pushStack(i, "x", xRot[i]);
                 }
                 else if (num[i] == 2)
                 {
-                    xRot[i] += 9;
+                    xRot[i] = 9;
                     num[i] = 6;
                     spin[2] = i;
+                    pushStack(i, "x", xRot[i]);
                 }
                 else if (num[i] == 5)
                 {
-                    xRot[i] += 9;
+                    xRot[i] = 9;
                     num[i] = 1;
                     spin[3] = i;
+                    pushStack(i, "x", xRot[i]);
                 }
                 else if (num[i] == 6)
                 {
-                    xRot[i] += 9;
+                    xRot[i] = 9;
                     num[i] = 5;
                     spin[4] = i;
+                    pushStack(i, "x", xRot[i]);
                 }
             }//for end
             count++;

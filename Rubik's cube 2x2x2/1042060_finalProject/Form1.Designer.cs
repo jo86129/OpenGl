@@ -43,9 +43,6 @@
             this.rightClock = new System.Windows.Forms.Button();
             this.rightAnti = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // simpleOpenGlControl1
@@ -129,7 +126,7 @@
             // 
             // backClock
             // 
-            this.backClock.Location = new System.Drawing.Point(571, 254);
+            this.backClock.Location = new System.Drawing.Point(571, 258);
             this.backClock.Name = "backClock";
             this.backClock.Size = new System.Drawing.Size(66, 37);
             this.backClock.TabIndex = 7;
@@ -139,7 +136,7 @@
             // 
             // backAnti
             // 
-            this.backAnti.Location = new System.Drawing.Point(667, 254);
+            this.backAnti.Location = new System.Drawing.Point(667, 258);
             this.backAnti.Name = "backAnti";
             this.backAnti.Size = new System.Drawing.Size(67, 37);
             this.backAnti.TabIndex = 8;
@@ -192,41 +189,11 @@
             this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(772, 85);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 12);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "label1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(774, 125);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 12);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(776, 162);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 12);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "label3";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 463);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(776, 463);
             this.Controls.Add(this.rightAnti);
             this.Controls.Add(this.rightClock);
             this.Controls.Add(this.leftClock);
@@ -244,7 +211,6 @@
             this.Text = "Form1";
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -264,9 +230,6 @@
         private System.Windows.Forms.Button rightClock;
         private System.Windows.Forms.Button rightAnti;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
     }
 }
 
