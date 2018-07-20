@@ -1,0 +1,9 @@
+C:\Users\asus\Desktop\電腦圖學\20180509light\20180509light\bin\Debug\20180509light.exe.config
+C:\Users\asus\Desktop\電腦圖學\20180509light\20180509light\bin\Debug\20180509light.exe
+C:\Users\asus\Desktop\電腦圖學\20180509light\20180509light\bin\Debug\20180509light.pdb
+C:\Users\asus\Desktop\電腦圖學\20180509light\20180509light\obj\Debug\_20180509light.Form1.resources
+C:\Users\asus\Desktop\電腦圖學\20180509light\20180509light\obj\Debug\_20180509light.Properties.Resources.resources
+C:\Users\asus\Desktop\電腦圖學\20180509light\20180509light\obj\Debug\20180509light.csproj.GenerateResource.Cache
+C:\Users\asus\Desktop\電腦圖學\20180509light\20180509light\obj\Debug\20180509light.exe
+C:\Users\asus\Desktop\電腦圖學\20180509light\20180509light\obj\Debug\20180509light.pdb
+C:\Users\asus\Desktop\電腦圖學\20180509light\20180509light\obj\Debug\20180509light.csprojResolveAssemblyReference.cache

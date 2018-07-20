@@ -1,0 +1,9 @@
+C:\Users\asus\Desktop\電腦圖學\20180509SolarSystemLight\20180509SolarSystemLight\bin\Debug\20180509SolarSystemLight.exe.config
+C:\Users\asus\Desktop\電腦圖學\20180509SolarSystemLight\20180509SolarSystemLight\bin\Debug\20180509SolarSystemLight.exe
+C:\Users\asus\Desktop\電腦圖學\20180509SolarSystemLight\20180509SolarSystemLight\bin\Debug\20180509SolarSystemLight.pdb
+C:\Users\asus\Desktop\電腦圖學\20180509SolarSystemLight\20180509SolarSystemLight\obj\Debug\_20180509SolarSystemLight.Form1.resources
+C:\Users\asus\Desktop\電腦圖學\20180509SolarSystemLight\20180509SolarSystemLight\obj\Debug\_20180509SolarSystemLight.Properties.Resources.resources
+C:\Users\asus\Desktop\電腦圖學\20180509SolarSystemLight\20180509SolarSystemLight\obj\Debug\20180509SolarSystemLight.csproj.GenerateResource.Cache
+C:\Users\asus\Desktop\電腦圖學\20180509SolarSystemLight\20180509SolarSystemLight\obj\Debug\20180509SolarSystemLight.exe
+C:\Users\asus\Desktop\電腦圖學\20180509SolarSystemLight\20180509SolarSystemLight\obj\Debug\20180509SolarSystemLight.pdb
+C:\Users\asus\Desktop\電腦圖學\20180509SolarSystemLight\20180509SolarSystemLight\obj\Debug\20180509SolarSystemLight.csprojResolveAssemblyReference.cache

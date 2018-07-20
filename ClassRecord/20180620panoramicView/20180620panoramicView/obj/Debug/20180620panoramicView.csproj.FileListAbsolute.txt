@@ -1,0 +1,9 @@
+C:\Users\asus\Desktop\電腦圖學\20180620panoramicView\20180620panoramicView\bin\Debug\20180620panoramicView.exe.config
+C:\Users\asus\Desktop\電腦圖學\20180620panoramicView\20180620panoramicView\bin\Debug\20180620panoramicView.exe
+C:\Users\asus\Desktop\電腦圖學\20180620panoramicView\20180620panoramicView\bin\Debug\20180620panoramicView.pdb
+C:\Users\asus\Desktop\電腦圖學\20180620panoramicView\20180620panoramicView\obj\Debug\20180620panoramicView.csprojResolveAssemblyReference.cache
+C:\Users\asus\Desktop\電腦圖學\20180620panoramicView\20180620panoramicView\obj\Debug\_20180620panoramicView.Form1.resources
+C:\Users\asus\Desktop\電腦圖學\20180620panoramicView\20180620panoramicView\obj\Debug\_20180620panoramicView.Properties.Resources.resources
+C:\Users\asus\Desktop\電腦圖學\20180620panoramicView\20180620panoramicView\obj\Debug\20180620panoramicView.csproj.GenerateResource.Cache
+C:\Users\asus\Desktop\電腦圖學\20180620panoramicView\20180620panoramicView\obj\Debug\20180620panoramicView.exe
+C:\Users\asus\Desktop\電腦圖學\20180620panoramicView\20180620panoramicView\obj\Debug\20180620panoramicView.pdb

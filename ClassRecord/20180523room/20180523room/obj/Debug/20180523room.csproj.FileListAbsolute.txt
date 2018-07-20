@@ -1,0 +1,9 @@
+C:\Users\asus\Desktop\電腦圖學\20180523room\20180523room\bin\Debug\20180523room.exe.config
+C:\Users\asus\Desktop\電腦圖學\20180523room\20180523room\obj\Debug\20180523room.csprojResolveAssemblyReference.cache
+C:\Users\asus\Desktop\電腦圖學\20180523room\20180523room\obj\Debug\_20180523room.Form1.resources
+C:\Users\asus\Desktop\電腦圖學\20180523room\20180523room\obj\Debug\_20180523room.Properties.Resources.resources
+C:\Users\asus\Desktop\電腦圖學\20180523room\20180523room\obj\Debug\20180523room.csproj.GenerateResource.Cache
+C:\Users\asus\Desktop\電腦圖學\20180523room\20180523room\bin\Debug\20180523room.exe
+C:\Users\asus\Desktop\電腦圖學\20180523room\20180523room\bin\Debug\20180523room.pdb
+C:\Users\asus\Desktop\電腦圖學\20180523room\20180523room\obj\Debug\20180523room.exe
+C:\Users\asus\Desktop\電腦圖學\20180523room\20180523room\obj\Debug\20180523room.pdb
